@@ -18,6 +18,8 @@ Debian/Debian based: `sudo apt update; sudo apt install conky`
 <h3> Step 2: Create (or open) a file named ".conkyrc" in your home directory </h3>
 
  `sudo nano ~/.conkyrc`
+
+ ![Created file being correctly displayed](https://github.com/CarlosGomezPajaron/Conky_configs/blob/main/steps_images/conkyfile.png)
  
 (NOTE: To edit how conky displays information, it is necessary to create the configuration file corresponding to it, here the changes to what it displays will be made)
 
@@ -28,6 +30,7 @@ Debian/Debian based: `sudo apt update; sudo apt install conky`
 ----------------------------
 <h3> Step 3: Once inside the file, copy and paste one of the various configs to your ".conkyrc" file </h3>
 
+ ![Pasted conky config file](https://github.com/CarlosGomezPajaron/Conky_configs/blob/main/steps_images/pastedconfig.png)
 
 (NOTE: To edit how conky displays information, it is necessary to create the configuration file corresponding to it, here the changes to what it displays by default will be made)
 
@@ -40,6 +43,13 @@ Debian/Debian based: `sudo apt update; sudo apt install conky`
 `conky`
   
 (NOTE: It is most likely that conky will restart itself automatically when changing the configuration file but this step is just in case it does not do so for you.)
+  
+----------------------------
+<h3> Done: When restarted, conky should be working </h3>
+
+Example of a basic conky config:
+
+![Working conky with config file applied](https://github.com/CarlosGomezPajaron/Conky_configs/blob/main/steps_images/conkyfinal.png)
   
 ----------------------------
 
