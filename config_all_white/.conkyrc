@@ -1,0 +1,95 @@
+conky.config = {
+background = false,
+font = 'Snap.se:size=8',
+font = 'Snap.se:size=8',
+use_xft = true,
+xftalpha = 0.1,
+update_interval = 3.0,
+total_run_times = 0,
+own_window = true,
+own_window_type = 'normal',
+own_window_transparent = true,
+own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+double_buffer = true,
+draw_shades = false,
+draw_outline = false,
+draw_borders = false,
+draw_graph_borders = false,
+minimum_width = 200, minimum_height = 6,
+maximum_width = 300,
+default_color = '#ffffff',
+default_shade_color = '#000000',
+default_outline_color = '#000000',
+alignment = 'top_right',
+gap_x = 10,
+gap_y = 50,
+no_buffers = true,
+cpu_avg_samples = 2,
+override_utf8_locale = false,
+uppercase = false,-- set to yes if you want all text to be in uppercase
+use_spacer = 'no',
+own_window_argb_visual = true,
+
+};
+
+conky.text = [[
+
+#Esta línea es el nombre que aparece arriba del todo
+${color #ffffff}${font JetBrains Mono ExtraLight:size=14}${alignc}Do a Pacman -Syu
+#Esta línea es la hora que aparece arriba del todo debajo del nombre
+${font JetBrains Mono ExtraLight:size=18}${alignc}${time %H:%M}${font}
+#Esta línea es la fecha del día de hoy que aparecce debajo de la hora
+${alignc}${font JetBrains Mono ExtraLight:size=15}${time %d}/${time %m}/${time %Y}
+#Esto es un hr en HTML, que es la línea esa que separa
+${color #ffffff}$hr
+#Esto es el texto que aparece para indicar de que son los stats
+${font JetBrains Mono ExtraLight:style=bold:size=14}Kernel
+#Este texto indica cuál es el nombre del sistema
+${font JetBrains Mono ExtraLight:style=bold:size=10}$sysname: $alignr $kernel
+#Este texto indica cuál es la cantidad de tiempo que lleva usandose el sistema
+Uptime:$alignr${font JetBrains Mono ExtraLight:style=bold:size=10} $uptime
+#Este texto indica cuál es el nombre de tu ordenador/host
+${font JetBrains Mono ExtraLight:style=bold:size=10}Machine: $alignr$nodename
+#Esta es otra linea hr como en HTML para delimitar que aquí empiezan los stats del uso de la CPU
+${color #ffffff}$hr
+#Este es otro texto en rojo donde puedes poner el nombre que quieras para representar a esta sección
+${font JetBrains Mono ExtraLight:style=bold:size=14} CPU core usage
+#Estos textos representan a los primeros 4 núcleos de tu CPU
+#Nota: si quieres que en vez de 4 sean menos, los puedes quitar
+${font JetBrains Mono ExtraLight:style=bold:size=10}CPU1:${color #ffffff}${cpu cpu1}%${color #ffffff}$alignc${cpubar cpu1}
+CPU2:${color #ffffff}${cpu cpu2}%${color #ffffff}$alignc${cpubar cpu2}
+CPU3:${color #ffffff}${cpu cpu3}%${color #ffffff}$alignc${cpubar cpu3}
+CPU4:${color #ffffff}${cpu cpu4}%${color #ffffff}$alignc${cpubar cpu4}
+#Esto es el delimitador para separar la parte que nos muestra las particiones HOME, la de la memoria SWAP y la RAM
+${color #ffffff}$hr
+#El nombre que quieras para ponerle a esta parte
+${font JetBrains Mono ExtraLight:style=bold:size=14}Partitions
+#Esta es la parte que representa a la partición home del sistema
+${font JetBrains Mono ExtraLight:style=bold:size=10}HOME ${color #ffffff} $alignr ${fs_used /home} / ${fs_size /home}
+#Esta es la barra que aparece debajo del nombre de la partición home
+${color #ffffff}${fs_bar /home}
+#Esto es lo mismo pero para las otras particiones, el nombre + su barra
+${font JetBrains Mono ExtraLight:style=bold:size=10}RAM ${color #ffffff}$alignr $mem / $memmax
+${color #ffffff}${membar}
+${font JetBrains Mono ExtraLight:style=bold:size=10}SWAP ${color #ffffff}$alignr $swap / $swapmax
+${color #ffffff}$swapbar
+#Este es el delimitador que muestra que apps están usando más la CPU actualmente
+${color #ffffff}$hr
+#Este es el nombre para la sección, se puede poner el que queráis
+${font JetBrains Mono ExtraLight:style=bold:size=14}Top 5 CPU hogs
+#Estos son los 3 procesos que más CPU están usando, se pueden quitar o añadir fácilmente más procesos
+${font JetBrains Mono ExtraLight:style=bold:size=10}${top name 1}$alignr${color #ffffff}${top cpu 1}%
+${top name 2}$alignr${color #ffffff}${top cpu 2}%
+${top name 3}$alignr${color #ffffff}${top cpu 3}%
+${top name 4}$alignr${color #ffffff}${top cpu 4}%
+${top name 5}$alignr${color #ffffff}${top cpu 5}%
+#Este es el delimitador para separar la parte que muestra el procentaje de RAM que usan las aplicaciones de ella
+${color #ffffff}$hr
+#Como siempre, este es el nombre de nuestra elección
+${font JetBrains Mono ExtraLight:style=bold:size=14}Top 3 RAM hogs
+#AL igual que con las CPUs, se coge el nombre de cada proceso en tiempo real
+#Si quieres quitar o añadir procesos se puede hacer también fácilmente
+${font JetBrains Mono ExtraLight:style=bold:size=10}${top_mem name 1}$alignr${color #ffffff}${top_mem mem 1}%
+${top_mem name 2}$alignr${color #ffffff}${top_mem mem 2}%
+${top_mem name 3}$alignr${color #ffffff}${top_mem mem 3}%
+]];
